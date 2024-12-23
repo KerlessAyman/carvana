@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <!--fontawsome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="./img/icon.png">
+    <title>carvana</title>
+</head>
+<body>
+    <header>    
+        <div id="navbar">
+            <img src="./img/carvana-logo.png" alt="Carvana">
+            <nav >
+                <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#cars">Cars</a></li>
+                <li><a href="#contact">contact</a></li>
+            </ul>
+            </nav>
+            <select id="navigateSelect" onchange="navigatePage()">
+                <option value="" disabled selected>Get Started</option>
+                <option value="admin.html" id="admin">Admin</option>
+                <option value="signin.html">Sign In</option>
+                <option value="signup.html">Sign Up</option>
+                
+            </select>
+        
+            
+        </div>
+        <div class="content">
+            <h1>Your Ultimate Destination to Rent a car with<span class="primary-text"> Carvana</span></h1>
+            <p>We provide a seamless car rental experience through Carvana,offering a variety of vehicles to meet your needs.<br> Whether you’re planning a weekend getaway or a business trip, Carvana is here to make your journey effortless and enjoyable.</p>
+            <a href="signin.html" class="btn btn-primary">Get Started</a>
+            <div class="download-buttons">
+            <img src="./img/appStore.png" alt="img">
+            <img id="img-g" src="./img/google-play.png" alt="img">
+
+        </div>
+        </div>
+        
+    </header>
+    <!--Header end-->
+    <main>
+        <!-- About Start-->
+        <section id="about">
+            <div class="container">
+                <div class="title">
+                    <h2>The Carvana history</h2>
+                    <p>More than 25+ years of experiance</p>
+                </div>
+                <div class="about-content">
+                        <div>
+                            <p>
+                                Carvana is a car rental platform offering a wide range of vehicles at competitive prices. We ensure fast booking, exceptional customer service, and a seamless experience tailored to your needs.
+                            </p>
+                            <p>
+                                Carvana provides innovative car rental solutions designed to meet your travel needs. Our platform offers flexible options, a variety of vehicles, and user-friendly services to ensure a smooth and enjoyable experience.
+
+                            </p>
+                            <a href="#" class="btn btn-secondary" id="learn-more">Learn More</a>
+                            <p id="extra-text">
+                                Carvana is a trusted name in the car rental industry, with a rich history of providing customers with high-quality vehicles and exceptional service. Over the years, we have built a reputation for reliability, customer satisfaction, and innovation in the car rental market. Our mission is to continue offering seamless rental experiences while adapting to the evolving needs of our customers.
+                            </p>
+                        </div>
+                        <img src="./img/about-background.png" alt="about-background">
+                    </div>
+                </div>
+            </div>
+         </section>
+         <!--About end-->
+         <!--cars Start-->
+         <secttion id="cars">
+            <div class="container">
+                <h2>Some of our cars</h2>
+                <div class="img-gallery">
+                    <img src="./img/car1.jpg" alt="Gallery 1">
+                    <img src="./img/car2.jpg" alt="Gallery 2">
+                    <img src="./img/car3.jpg" alt="Gallery 3">
+                    <img src="./img/car4.jpg" alt="Gallery 4">
+                    <img src="./img/car5.jpg" alt="Gallery 5">
+                    <img src="./img/car6.jpg" alt="Gallery 6">
+                </div>
+            </div>
+         </secttion>
+         <!--cars end-->
+         <!--Contact Start-->
+         <section id="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div>
+                            <h3>ADDRESS</h3>
+                            <P><i class="fa-sharp fa-solid fa-location-dot"></i> ANU, Alexandria, Egypt</P>
+                            <p><i class="fa-solid fa-phone"></i> Phone: 123456789</p>
+                            <p><i class="fa-regular fa-envelope"></i> support@Carvana.com</p>
+                        </div>
+                        <div>
+                            <h3>WORKING HOURS</h3>
+                            <P>8:00 am to 11:00 pm on Weekdays</P>
+                            <p>11:00 am to 1:00 pm on Weekend</p>
+                        </div>
+                        <div>
+                            <h3>FOLLOW US</h3>
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <form>
+                        <input type="text" name="Name" id="Name" placeholder="Full Name" required>
+                        <input type="email" name="email" id="email" placeholder="Email Address" required>
+                        <input type="text" name="Subject" id="Subject" placeholder="Subject" required>
+                        <textarea name="Message" id="Message" cols="30" rows="5" placeholder="Message"></textarea>
+                        <button type="submit" class="btn"> SEND MESSAGE</button>
+                    </form>
+                </div>
+            </div>
+         </section>
+         <!--Contact End-->
+
+    </main>
+    <footer id="footer">
+        <p>Copyright &copy; 2024 All rights reserved | Made by <b><a href="https://Carvana@gmail.com" target="-blank">Carvana</a></b></p>
+        <script src="./js/index.js"></script>
+    </footer>
+    
+    <div class="dropdown-content">
+        <a href="signin.html" onclick="navigateTo('signIn')">Sign In</a>
+        <a href="admin.html" onclick="navigateTo('admin')">Admin</a>
+    </div>
+   
+
+</body>
+</html>

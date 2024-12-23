@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/admin.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="./img/icon.png">
+    <title>Admin</title>
+    
+</head>
+<body>
+    <header>    
+        <div id="navbar">
+            
+            <h1>Admin</h1>
+            <nav >
+                <ul>
+                <li><a href="#search">Search</a></li>
+                <li><a href="#addcar">Add a Car</a></li>
+                
+            </ul>
+            </nav>
+    </div>
+    
+    <section id="search">
+    <label for="options">Search method</label>
+    <select id="options" onchange="more_info()">
+        <option value="">-- Choose --</option>
+        <option value="customer-name">customer name</option>
+        <option value="date">Date</option>
+        <option value="information"> All the information</option>
+    </select>
+
+    <!--search -->
+    <div id="customer-name" class="hidden">
+        <label for="names">customer Name:</label>
+        <input type="text" id="names" required>
+        <button type="submit" id="submit-name"><ion-icon name="search"></ion-icon></button>
+    </div>
+
+    <div id="date" class="hidden">
+        <label for="date" >Date:</label>
+        <input type="date" id="date" required>
+        <button type="submit" id="submit-date"><ion-icon name="search"></ion-icon></button>
+
+    </div>
+
+    <div id="information" class="hidden">
+        <!-- table (search)-->
+        <table id="table1">
+            <tr>
+                <th>Reservation-ID</th>
+                <th>Customer-ID</th>
+                <th>Car-ID</th>
+                <th>branch-ID</th>
+                <th>Reservation-Date</th>
+                <th>Pick-up-Date</th>
+                <th>Return-Date</th>
+            </tr>
+            <tr>
+                <td>data</td>
+                <td>data</td>
+                <td>data</td>
+                <td>data</td>
+                <td>data</td>
+                <td>data</td>
+                <td>data</td>
+            </tr>
+        </table>
+    </div>
+</header>
+    </section>
+<!---->
+
+<section id="addcar">
+    
+    <h2>Add a Car</h2>
+    <form id="uploadForm">
+        <table id="Upload">
+            <tr>
+                <td>
+                    <input type="file" accept="image/*" id="imageInput" onchange="previewImage(event)">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img id="imagePreview" src="" alt="Image Preview" style="max-width: 100%; display: none;">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id="modelInput" placeholder="Model" required>
+                    <input type="text" id="statusInput" placeholder="Status" required>
+                    <input type="number" id="yearInput" min="1000" placeholder="Year" required>
+                    <input type="text" id="makeInput" placeholder="Make" required>
+                    <input type="text" id="plateIdInput" placeholder="Plate-ID" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" onclick="saveData()">Save</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>Model</th>
+                <th>Status</th>
+                <th>Year</th>
+                <th>Make</th>
+                <th>Plate-ID</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Rows will be added dynamically here -->
+        </tbody>
+    </table>
+</section>
+    <script src="./js/admin.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

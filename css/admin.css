@@ -1,0 +1,107 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+header{
+    height: 100vh;
+    background: url('../img/background.jpg') center center/cover no-repeat;
+    position: relative;
+}
+body{
+    font-family: "Quicksand", sans-serif;
+}
+ul {
+    list-style: none;
+    
+}
+#navbar{
+    display: flex;
+    justify-content: space-between;/*final page*/
+    align-items: center;
+    
+}
+#navbar ul{
+    display: flex;
+    margin-right:50px;
+}
+#navbar ul li a{
+    padding: 15px 20px;
+    color: #fff;
+    font-size: 600;
+    text-decoration: none;
+
+}
+#navbar ul li a:hover{
+    border-bottom:2px solid #e4b95b;
+}
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgb(0, 0, 0,0.6);
+}
+header * {
+    z-index: 10; /*to show the header after it disappears*/
+
+}
+
+
+#search{
+    display: flex;
+    z-index: 10;
+    color: #fff;
+    gap: 10px;
+}
+#options{
+    text-align: center;
+    
+    width: 130px;
+    height: 20px;
+    
+}
+
+
+table {
+    border-collapse: collapse;
+    margin-top: 20px;
+    
+}
+table, th, td {
+    border: 1px solid #fff;
+    
+}
+th, td {
+    padding: 8px;
+    text-align: center;
+}
+.hidden {
+    display: none;
+}
+#Upload {
+    border-collapse: collapse;
+    width: 90%;
+    margin-left: 72px;
+}
+#Upload td {
+    text-align: center;
+    padding: 10px;
+}
+/**/
+#addcar {
+
+    background: url('../img/addcar.jpg') center center/cover fixed;
+    padding: 8rem 0 6rem;
+    color: #fff;
+
+}
+#addcar h2{
+    color: #fff;
+    text-align: center;
+}
