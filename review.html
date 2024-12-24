@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental Review</title>
+     <!-- Favicon -->
+     <link rel="shortcut icon" type="image/x-icon" href="./img/icon.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .review-form {
+            margin-top: 1rem;
+        }
+        .review-form input, .review-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .review-form button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .review-form button:hover {
+            background-color: #0056b3;
+        }
+        .reviews {
+            margin-top: 2rem;
+        }
+        .review {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
+        .review p {
+            margin: 0.5rem 0;
+        }
+        .star-rating {
+            direction: rtl;
+            font-size: 1.5rem;
+        }
+        .star-rating input {
+            display: none;
+        }
+        .star-rating label {
+            color: #ddd;
+            cursor: pointer;
+        }
+        .star-rating input:checked ~ label {
+            color: #ffc107;
+        }
+        .star-rating label:hover,
+        .star-rating label:hover ~ label {
+            color: #ffca2c;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Car Rental Service Review</h1>
+</header>
+
+<div class="container">
+    <h2>Leave a Review</h2>
+    <form class="review-form" onsubmit="addReview(event)">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <textarea id="review" rows="5" placeholder="Write your review here..." required></textarea>
+        
+        <div class="star-rating">
+            <input type="radio" name="rating" id="star5" value="5">
+            <label for="star5">&#9733;</label>
+            <input type="radio" name="rating" id="star4" value="4">
+            <label for="star4">&#9733;</label>
+            <input type="radio" name="rating" id="star3" value="3">
+            <label for="star3">&#9733;</label>
+            <input type="radio" name="rating" id="star2" value="2">
+            <label for="star2">&#9733;</label>
+            <input type="radio" name="rating" id="star1" value="1">
+            <label for="star1">&#9733;</label>
+        </div>
+
+        <button type="submit">Submit Review</button>
+    </form>
+
+    <div class="reviews" id="reviews">
+        <h2>Customer Reviews</h2>
+        <!-- Reviews will appear here -->
+    </div>
+</div>
+
+<script>
+    function addReview(event) {
+        event.preventDefault();
+        const name = document.getElementById('name').value;
+        const reviewText = document.getElementById('review').value;
+        const rating = document.querySelector('input[name="rating"]:checked')?.value;
+
+        if (name && reviewText && rating) {
+            const reviewSection = document.getElementById('reviews');
+            const newReview = document.createElement('div');
+            newReview.classList.add('review');
+            newReview.innerHTML = `
+                <p><strong>${name}</strong></p>
+                <p>${'★'.repeat(rating)}${'☆'.repeat(5 - rating)}</p>
+                <p>${reviewText}</p>
+            `;
+            reviewSection.appendChild(newReview);
+
+            // Clear the form
+            document.getElementById('name').value = '';
+            document.getElementById('review').value = '';
+            document.querySelector('input[name="rating"]:checked').checked = false;
+        } else {
+            alert('Please fill in all fields and select a rating.');
+        }
+    }
+</script>
+
+</body>
+</html>
